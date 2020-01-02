@@ -37,10 +37,26 @@
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
     ```
+- 指定配置文件启动 Nginx ：nginx -c /etc/nginx/nginx.conf
 
-- 重载配置文件（不影响当前请求）
+```
+root@iZuf65j82tplbqtm6akqvnZ:/var/log/nginx# ps -ef | grep nginx
+root     16431 16052  0 02:30 pts/0    00:00:00 grep --color=auto nginx
+root@iZuf65j82tplbqtm6akqvnZ:/etc/nginx# nginx -c /etc/nginx/nginx.conf
+root@iZuf65j82tplbqtm6akqvnZ:/etc/nginx# ps -ef | grep nginx
+root     16438     1  0 02:31 ?        00:00:00 nginx: master process nginx -c /etc/nginx/nginx.conf
+www-data 16439 16438  0 02:31 ?        00:00:00 nginx: worker process
+www-data 16440 16438  0 02:31 ?        00:00:00 nginx: worker process
+root     16442 16052  0 02:31 pts/0    00:00:00 grep --color=auto nginx
+```
 
-    `nginx -s reload -c /etc/nginx/nginx.conf`
+- nginx -s reload 不宕机, 平滑地加载配置文件;在升级/修改配置的时候，平滑过度到新配置
+- nginx -s stop 立即停止Nginx服务
+- nginx -s quit 潇洒地停止Nginx服务
+- nginx -s reopen 重新开始记录Nginx日志
+- 重载配置文件（不影响当前请求）#下面的命令实际上是无效的，需要注意
+
+    `nginx -s reload -c /etc/nginx/nginx.conf`   
 
 - tcp 负载均衡配置模板（四层负载均衡从 1.9 版本开始默认支持）
 
