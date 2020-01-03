@@ -51,9 +51,9 @@ root     16442 16052  0 02:31 pts/0    00:00:00 grep --color=auto nginx
 ```
 
 - nginx -s reload 不宕机, 平滑地加载配置文件;在升级/修改配置的时候，平滑过度到新配置
-- nginx -s stop 立即停止Nginx服务
-- nginx -s quit 潇洒地停止Nginx服务
-- nginx -s reopen 重新开始记录Nginx日志
+- nginx -s stop 立即停止 nginx 服务
+- nginx -s quit 平滑地停止 nginx 服务
+- nginx -s reopen 重新开始记录 Nginx 日志
 - 重载配置文件（不影响当前请求）#下面的命令实际上是无效的，需要注意
 
     `nginx -s reload -c /etc/nginx/nginx.conf`   
