@@ -178,7 +178,12 @@ $upstream_response_time  请求过程中，upstream响应时间                 
 
 
 > https://docs.nginx.com/nginx/admin-guide/load-balancer/tcp-udp-load-balancer/
+
 > https://www.nginx.com/resources/wiki/start/topics/examples/loadbalanceexample/
+
 > http://www.freeoa.net/osuport/servap/nginx-proxy-stream_3356.html
+
 > http://nginx.org/en/docs/stream/ngx_stream_core_module.html
+
 > https://www.cnblogs.com/lvgg/p/6140584.html
+
