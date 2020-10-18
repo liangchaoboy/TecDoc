@@ -1,0 +1,37 @@
+### nc 命令使用参考
+
+#### nc 命令简介
+
+- nc 是 netcat 简称，是一个简单可靠的网络工具
+
+#### nc 功能
+
+- 端口扫描
+
+
+#### 参数说明
+
+- v 显示交互信息
+- z 扫描时不发送数据
+- w 设置超时时间
+- u 使用 udp // 默认是 tcp
+- n 不使用 dns 反向查询 ip 的域名
+
+
+### 使用示例
+
+- nc -z -v -n 139.196.214.206 22 // 扫描 139.196.214.206 机器 22端口是否是对外开放
+  ```
+liangchao$ nc -zvn 139.196.214.206 22
+Connection to 139.196.214.206 22 port [tcp/*] succeeded!
+
+  ```
+- nc -z -v -n 139.196.214.206 21-23 // 扫描 139.196.214.206 机器 21到23端口是否是对外开放
+  ```
+nc -z -v -n 139.196.214.206 21-23
+nc: connect to 139.196.214.206 port 21 (tcp) failed: Connection timed out
+Connection to 139.196.214.206 22 port [tcp/*] succeeded!
+nc: connect to 139.196.214.206 port 23 (tcp) failed: Connection timed out
+  ```
+
+
