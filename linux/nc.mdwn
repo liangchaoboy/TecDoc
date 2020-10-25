@@ -33,5 +33,3 @@ nc: connect to 139.196.214.206 port 21 (tcp) failed: Connection timed out
 Connection to 139.196.214.206 22 port [tcp/*] succeeded!
 nc: connect to 139.196.214.206 port 23 (tcp) failed: Connection timed out
   ```
-
-
